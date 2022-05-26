@@ -2,28 +2,23 @@
   <div class="banner">
     <div id="form-container">
       <form>
-        <label for="fname">Live new experiences:</label><br>
+        <label for="fname">Live New Experiences:</label><br>
         <input type="text" id="fname" name="fname"><br>
       </form>
     </div>
   </div>
 </div>
-<div class="experiences-container">
-  <h1>Explore our experiences around you!</h1>
-  <div class="experience-cards">
-    <% @experiences.each do |experience| %>
+<div class="container">
+  <div class="cards">
+  <%# <h1>Explore our experiences around you!</h1> %>
+  <% @experiences.each do |experience| %>
       <%= link_to experience_path(experience) do %>
-        <div class="btn-img btn-img-combo experience-card-category " style="background-image: linear-gradient(
-                                                          180deg,
-                                                            rgba(0, 0, 0, 0.8),
-                                                            rgba(0, 0, 0, 0.2)),
-                                                            url(https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770)
-                                                        ;
-                                                        ">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
           <%= experience.name %>
           <p class="text"><%= experience.description %></p>
-          </div>
+          <p id="price"><%= experience.price %></p>
+        </div>
       <% end %>
-    <% end %>
+  <% end %>
   </div>
 </div>

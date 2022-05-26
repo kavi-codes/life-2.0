@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-
+    @booking = User.find(params[:user_id])
   end
 
   private
